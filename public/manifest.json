@@ -1,0 +1,22 @@
+{
+  "name": "3 Patti Room",
+  "short_name": "3 Patti Room",
+  "description": "Teen Patti Room is a popular online card game with smooth graphics, easy control, and fast gameplay.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#6b1220",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/3-patti-room.webp",
+      "sizes": "192x192 512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}
