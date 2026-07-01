@@ -97,4 +97,39 @@
     <priority>0.8</priority>
     <mobile:mobile/>
   </url>
+  <url>
+    <loc>https://teenpattiroomapp.com.pk/blog/how-to-recover-password-3-patti-room</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://teenpattiroomapp.com.pk/about-us</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://teenpattiroomapp.com.pk/contact-us</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://teenpattiroomapp.com.pk/privacy-policy</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <mobile:mobile/>
+  </url>
+  <url>
+    <loc>https://teenpattiroomapp.com.pk/disclaimer</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <mobile:mobile/>
+  </url>
 </urlset>

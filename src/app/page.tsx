@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 };
 
 const tocItems = [
-  { id: 'what-is-teen-patti-room', label: 'What is Teen Patti Room?' },
+  { id: 'what-is-teen-patti-room', label: 'What is 3 Patti Room?' },
   { id: 'unique', label: 'What Makes 3 Patti Room Unique?' },
   { id: 'features', label: 'Key Gaming Features' },
   { id: 'how-to-download', label: 'How to Download' },
@@ -200,7 +200,7 @@ export default function Home() {
 
             {/* What is Teen Patti Room / 3 Patti Room */}
             <section id="what-is-teen-patti-room">
-              <h2 className="section-heading">What is <span>Teen Patti Room?</span> What is 3 Patti Room?</h2>
+              <h2 className="section-heading">What is <span>3 Patti Room?</span></h2>
               <div className="space-y-4 text-gray-300 leading-relaxed">
                 <p>
                   <strong className="text-white">Teen Patti Room</strong> is a popular online Teen Patti (3 Patti) card game and earning app in Pakistan. Players download the APK, create an account, add money through JazzCash or EasyPaisa, join real-money tables, and withdraw winnings to their mobile wallet.

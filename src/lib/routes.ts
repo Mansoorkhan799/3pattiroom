@@ -7,6 +7,10 @@ export const ROUTES = {
   login: "/login-3-patti-room",
   pc: "/3-patti-room-for-pc",
   blog: "/blog",
+  about: "/about-us",
+  contact: "/contact-us",
+  privacy: "/privacy-policy",
+  disclaimer: "/disclaimer",
 } as const;
 
 export const NAV_LINKS = [
@@ -28,4 +32,11 @@ export const FOOTER_GUIDE_LINKS = [
   { href: ROUTES.withdraw, label: "Withdraw Guide" },
   { href: ROUTES.pc, label: "PC Version" },
   { href: ROUTES.blog, label: "Blog" },
+] as const;
+
+export const FOOTER_INFO_LINKS = [
+  { href: ROUTES.about, label: "About Us" },
+  { href: ROUTES.contact, label: "Contact Us" },
+  { href: ROUTES.privacy, label: "Privacy Policy" },
+  { href: ROUTES.disclaimer, label: "Disclaimer" },
 ] as const;

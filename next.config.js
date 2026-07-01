@@ -19,11 +19,8 @@ const nextConfig = {
 
   async redirects() {
     return [
-      { source: '/about', destination: '/', permanent: true },
-      { source: '/about-us', destination: '/', permanent: true },
-      { source: '/contact-us', destination: '/', permanent: true },
-      { source: '/privacy', destination: '/', permanent: true },
-      { source: '/disclaimer', destination: '/', permanent: true },
+      { source: '/about', destination: '/about-us', permanent: true },
+      { source: '/privacy', destination: '/privacy-policy', permanent: true },
       { source: '/download-card-rummy', destination: '/download-3-patti-room', permanent: true },
       { source: '/deposit-money-in-card-rummy', destination: '/deposit-money-in-3-patti-room', permanent: true },
       { source: '/withdraw-money-from-card-rummy', destination: '/withdraw-money-from-3-patti-room', permanent: true },
