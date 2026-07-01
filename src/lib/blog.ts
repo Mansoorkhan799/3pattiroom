@@ -88,6 +88,24 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
+    slug: "how-to-recover-password-3-patti-room",
+    title: "How to Recover Password in 3 Patti Room – Account Recovery Guide",
+    description:
+      "Forgot your 3 Patti Room password? Learn how to recover or reset your Teen Patti Room account password using phone number, email, or customer support in Pakistan.",
+    datePublished: "2026-07-02",
+    category: "Account",
+    readTime: "4 min read",
+    howToSteps: [
+      "Open the 3 Patti Room app and tap the Login button",
+      "On the login screen, tap 'Forgot Password'",
+      "Enter your registered phone number or email address",
+      "Receive and enter the OTP sent to your number or email",
+      "Create a new strong password and confirm it",
+      "Log in with your new password to access your account",
+      "Contact customer support if you no longer have access to your phone or email",
+    ],
+  },
+  {
     slug: "account-bound-by-other-id-3-patti-room-fix",
     title: "Your Account Has Been Bound by Other ID – How to Fix in 3 Patti Room",
     description:

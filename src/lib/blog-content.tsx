@@ -201,6 +201,58 @@ export const BLOG_ARTICLE_CONTENT: Record<string, { articleBody: string; section
       },
     ],
   },
+  "how-to-recover-password-3-patti-room": {
+    articleBody:
+      "To recover your 3 Patti Room password, tap Forgot Password on the login screen, enter your registered phone number or email, verify with OTP, then set a new password. If you lost access to your number, contact in-app customer support.",
+    sections: [
+      {
+        paragraphs: [
+          "Forgetting your 3 Patti Room password is common, especially if you reinstall the app or switch phones. The good news is that Teen Patti Room has a built-in account recovery option that lets you reset your password using your registered phone number or email address.",
+        ],
+      },
+      {
+        heading: "How to Recover Your 3 Patti Room Password",
+        list: [
+          "Open the 3 Patti Room app and tap the Login button on the main screen",
+          "Below the password field, tap on 'Forgot Password'",
+          "Enter the phone number or email address you used when registering",
+          "You will receive a one-time password (OTP) on your phone or email",
+          "Enter the OTP correctly on the verification screen",
+          "Create a new strong password — use a mix of letters and numbers",
+          "Confirm the new password and tap Submit to save it",
+          "Log in with your new password to access your account",
+        ],
+        footerLink: {
+          href: ROUTES.login,
+          label: "Full login guide for 3 Patti Room",
+        },
+      },
+      {
+        heading: "What If I Lost Access to My Phone Number or Email?",
+        paragraphs: [
+          "If you can no longer receive OTP on your old number or email, open the app and go to the Help or Support section. Contact the customer support team with your user ID, the old registered number, and any proof of account ownership (such as a deposit receipt or referral code). The support team can help verify and recover your account.",
+        ],
+        footerLink: {
+          href: `${ROUTES.blog}/account-bound-by-other-id-3-patti-room-fix`,
+          label: "Also read: account bound by other ID – how to fix",
+        },
+      },
+      {
+        heading: "Tips to Never Lose Your Password Again",
+        list: [
+          "Save your password in a secure place like your phone notes or a password manager",
+          "Bind both your phone number and email address in Profile settings for double recovery",
+          "Never share your password with anyone",
+          "Enable OTP login so you can access your account even without the password",
+          "Use a strong, unique password that you do not use on other apps",
+        ],
+        footerLink: {
+          href: ROUTES.register,
+          label: "How to register a new 3 Patti Room account",
+        },
+      },
+    ],
+  },
   "account-bound-by-other-id-3-patti-room-fix": {
     articleBody:
       "Account bound by other ID in 3 Patti Room means your phone, email or CNIC is linked to another account. Fix by logging into the original account, contacting support to unbind, or binding a new number after verification.",
