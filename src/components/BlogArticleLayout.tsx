@@ -24,7 +24,10 @@ export default function BlogArticleLayout({ post, articleBody, children }: BlogA
               items={[
                 { name: "Home", path: ROUTES.home },
                 { name: "Blog", path: ROUTES.blog },
-                { name: post.title, path: `${ROUTES.blog}/${post.slug}` },
+                {
+                  name: post.title.length > 40 ? post.title.slice(0, 40).trimEnd() + "…" : post.title,
+                  path: `${ROUTES.blog}/${post.slug}`,
+                },
               ]}
             />
             <p className="text-accent text-sm font-medium mt-5 mb-2">
