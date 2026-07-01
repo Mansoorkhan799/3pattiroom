@@ -8,7 +8,7 @@ import { ROUTES } from "@/lib/routes";
 
 const PAGE_TITLE = "Download 3 Patti Room APK – Official Guide for Pakistan 2026";
 const PAGE_DESCRIPTION =
-  "Download 3 Patti Room APK for Android, iOS and PC. Official installation guide with system requirements. Teen Patti Room Pakistani earning app free download.";
+  "Download 3 Patti Room APK for Android and PC. iOS version coming soon. Official installation guide with system requirements. Teen Patti Room Pakistani earning app free download.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -27,16 +27,8 @@ const androidSteps = [
   "Once the installation is completed, you can launch the app to start playing and earning money.",
 ];
 
-const iosSteps = [
-  "First, open the Safari Browser on your iOS device, such as an iPhone or iPad.",
-  "Make sure your browser is updated for better and smoother performance.",
-  "Search for the official website of 3 Patti Room.",
-  "Open the official website and find the download button.",
-  "Tap on the download button, and wait until the download completes on your device.",
-  "Once the app is installed, you need to allow permission if asked.",
-  "Now, go to Settings >General > Device Management and click on trust this developer option.",
-  "Once the app is installed, launch it on your device to start making money.",
-];
+const iosComingSoonMessage =
+  "3 Patti Room is not yet launched for iOS devices (iPhone and iPad). The official iOS app is coming soon. Until then, download on Android or follow our PC guide to play with an Android emulator.";
 
 const breadcrumbs = [
   { name: "Home", path: ROUTES.home },
@@ -68,11 +60,15 @@ export default function DownloadPage() {
           intro="Here is the step-by-step process to download the 3Patti Room application on your Android device;"
           steps={androidSteps}
         />
-        <StepList
-          title="For iOS"
-          intro="If you are using any iOS device, follow these simple steps to download this app;"
-          steps={iosSteps}
-        />
+        <div className="glass-card p-6 mb-6">
+          <h2 className="text-xl font-semibold text-accent mb-4">
+            For iOS
+            <span className="ml-2 text-xs font-bold uppercase tracking-wide text-black bg-accent px-2 py-0.5 rounded-full align-middle">
+              Coming Soon
+            </span>
+          </h2>
+          <p className="text-gray-300 leading-relaxed text-sm">{iosComingSoonMessage}</p>
+        </div>
         <div className="glass-card overflow-hidden">
           <table className="data-table">
             <thead>
@@ -85,10 +81,10 @@ export default function DownloadPage() {
             </thead>
             <tbody>
               {[
-                ["Operating System", "Android 7.0+", "IOS 11.0+", "Windows 10 or 11"],
-                ["RAM", "2GB", "4GB", "4GB"],
-                ["Storage", "500MB", "500MB", "2GB"],
-                ["Internet", "Stable 4G", "Strong 4G", "Strong 5G"],
+                ["Operating System", "Android 7.0+", "Coming Soon", "Windows 10 or 11"],
+                ["RAM", "2GB", "—", "4GB"],
+                ["Storage", "500MB", "—", "2GB"],
+                ["Internet", "Stable 4G", "—", "Strong 5G"],
               ].map(([sys, android, ios, pc]) => (
                 <tr key={sys}>
                   <td className="font-medium text-white">{sys}</td>

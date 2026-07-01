@@ -42,7 +42,7 @@ export default function Header() {
             <Link
               key={href}
               href={href}
-              className={`relative font-medium transition-colors px-3 py-2 rounded-lg text-sm ${
+              className={`relative font-medium transition-colors px-2 py-2 rounded-lg text-xs xl:text-sm xl:px-3 ${
                 isActive(href)
                   ? 'text-accent bg-surface/60'
                   : 'text-gray-300 hover:text-accent hover:bg-surface/50'

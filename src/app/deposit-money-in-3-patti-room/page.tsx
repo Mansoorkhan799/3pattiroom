@@ -4,26 +4,41 @@ import PageHero, { GuideContent, StepList } from "@/components/GuidePage";
 import PageSchemas from "@/components/PageSchemas";
 import { SITE_ORIGIN } from "@/lib/site";
 import { ROUTES } from "@/lib/routes";
+import { DEPOSIT_STEPS } from "@/lib/guide-steps";
 
-const PAGE_TITLE = "Deposit Money in 3 Patti Room – JazzCash & EasyPaisa Guide";
+const PAGE_TITLE = "How to Add Money in 3 Patti Room – JazzCash & EasyPaisa Deposit Guide";
 const PAGE_DESCRIPTION =
-  "Learn how to deposit money in 3 Patti Room using JazzCash and EasyPaisa. Step-by-step guide to add funds to your Teen Patti Room wallet in Pakistan.";
+  "Learn how to add money (deposit) in 3 Patti Room using JazzCash and EasyPaisa. Step-by-step Teen Patti Room wallet top-up guide for players in Pakistan.";
+
+const depositFaqs = [
+  {
+    question: "How to add money in 3 Patti Room?",
+    answer:
+      "Open the app, tap Deposit, choose JazzCash or EasyPaisa, enter the amount, confirm with your PIN, and wait a few seconds for the balance to update in your wallet.",
+  },
+  {
+    question: "How to deposit money in Teen Patti Room?",
+    answer:
+      "Teen Patti Room (3 Patti Room) uses the same deposit flow: login, open the wallet, select JazzCash or EasyPaisa, enter amount, and confirm payment.",
+  },
+  {
+    question: "Which payment methods work for 3 Patti Room deposit?",
+    answer: "3 Patti Room supports JazzCash and EasyPaisa for adding money to your game wallet in Pakistan.",
+  },
+];
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
   alternates: { canonical: `${SITE_ORIGIN}/deposit-money-in-3-patti-room` },
+  keywords: [
+    "how to add money in 3 patti room",
+    "how to deposit money in 3 patti room",
+    "teen patti room deposit",
+    "3 patti room jazzcash",
+    "3 patti room easypaisa",
+  ],
 };
-
-const depositSteps = [
-  "Open the 3 Patti Room app on your device and log in to your account.",
-  "On the main menu, tap on the deposit button to start the process.",
-  "Choose a payment method, like Easypaisa or Jazzcash.",
-  "Enter the amount that you want to add to your game wallet.",
-  "Recheck all the details and tap on the deposit button.",
-  "Now, enter your transaction pin to confirm the payment request.",
-  "Wait a few seconds, and your money will be added to your app wallet.",
-];
 
 const breadcrumbs = [
   { name: "Home", path: ROUTES.home },
@@ -42,26 +57,27 @@ export default function DepositPage() {
           description: PAGE_DESCRIPTION,
         }}
         howTo={{
-          name: "How to Deposit Money in 3 Patti Room",
+          name: "How to Add Money in 3 Patti Room",
           description: PAGE_DESCRIPTION,
-          steps: depositSteps,
+          steps: [...DEPOSIT_STEPS],
         }}
+        faqs={depositFaqs}
       />
       <PageHero
         breadcrumbs={breadcrumbs}
-        title="Deposit Money in 3 Patti Room"
-        description="To play real cash games, you need to deposit money into the game wallet. The process is simple and requires a few steps that are listed below."
+        title="How to Add Money in 3 Patti Room"
+        description="To play real cash games on Teen Patti Room, you need to add money to your wallet. Follow this JazzCash and EasyPaisa deposit guide step by step."
       />
       <GuideContent>
         <StepList
-          title="Deposit Method"
-          intro="3 Patti Room supports local payment methods, which are easy and reliable in Pakistan. You can use JazzCash and EasyPaisa to add or withdraw your money."
-          steps={depositSteps}
+          title="How to Deposit Money in 3 Patti Room"
+          intro="3 Patti Room supports local payment methods that are easy and reliable in Pakistan. You can use JazzCash and EasyPaisa to add money to your Teen Patti Room wallet."
+          steps={[...DEPOSIT_STEPS]}
         />
         <div className="glass-card p-6">
           <h2 className="text-xl font-semibold text-accent mb-3">Local Payment Options</h2>
           <p className="text-gray-300 text-sm leading-relaxed">
-            3 Patti Room supports local payment methods, which are easy and reliable in Pakistan. You can use JazzCash and EasyPaisa to add or withdraw your money. These options are easy to use and have a secure encryption system to ensure safe transactions. The local payment methods are easy to use, making the transaction system smooth and secure without any worry.
+            3 Patti Room supports JazzCash and EasyPaisa for deposits in Pakistan. Both methods use secure encryption so your transactions stay safe. If payment fails, check your internet connection and PIN, then try again or contact in-app support.
           </p>
         </div>
         <p className="text-sm text-gray-400 text-center">

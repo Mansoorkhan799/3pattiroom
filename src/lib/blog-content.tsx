@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ROUTES } from "@/lib/routes";
-import BrandText from "@/components/BrandText";
+import { createSingleBrandLinker } from "@/components/BrandText";
 
 export type BlogSection = {
   heading?: string;
@@ -258,18 +258,20 @@ export function BlogArticleBody({ slug }: { slug: string }) {
   const content = BLOG_ARTICLE_CONTENT[slug];
   if (!content) return null;
 
+  const BrandTextOnce = createSingleBrandLinker();
+
   return (
     <>
       {content.sections.map((section, i) => (
         <div key={i}>
           {section.heading && <h2>{section.heading}</h2>}
           {section.paragraphs?.map((p, j) => (
-            <p key={j}><BrandText text={p} /></p>
+            <p key={j}><BrandTextOnce text={p} /></p>
           ))}
           {section.list && (
             <ul>
               {section.list.map((item, k) => (
-                <li key={k}><BrandText text={item} /></li>
+                <li key={k}><BrandTextOnce text={item} /></li>
               ))}
             </ul>
           )}

@@ -5,6 +5,7 @@ import {
   absoluteUrl,
   breadcrumbSchema,
   buildSchemaGraph,
+  faqPageSchema,
   howToSchema,
   webPageSchema,
 } from "@/lib/schema";
@@ -21,10 +22,11 @@ type PageSchemasProps = {
     description: string;
     steps: string[];
   };
+  faqs?: { question: string; answer: string }[];
   id: string;
 };
 
-export default function PageSchemas({ breadcrumbs, page, howTo, id }: PageSchemasProps) {
+export default function PageSchemas({ breadcrumbs, page, howTo, faqs, id }: PageSchemasProps) {
   const url = absoluteUrl(page.path);
   const nodes: Record<string, unknown>[] = [
     breadcrumbSchema(breadcrumbs),
@@ -45,6 +47,10 @@ export default function PageSchemas({ breadcrumbs, page, howTo, id }: PageSchema
         url,
       })
     );
+  }
+
+  if (faqs?.length) {
+    nodes.push(faqPageSchema(faqs));
   }
 
   return <JsonLd id={id} data={buildSchemaGraph(...nodes)} />;

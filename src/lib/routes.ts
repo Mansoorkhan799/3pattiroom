@@ -12,6 +12,8 @@ export const ROUTES = {
 export const NAV_LINKS = [
   { href: ROUTES.home, label: "Home" },
   { href: ROUTES.download, label: "Download" },
+  { href: ROUTES.register, label: "Register" },
+  { href: ROUTES.login, label: "Login" },
   { href: ROUTES.deposit, label: "Deposit" },
   { href: ROUTES.withdraw, label: "Withdraw" },
   { href: ROUTES.pc, label: "PC Version" },

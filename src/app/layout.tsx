@@ -15,7 +15,7 @@ import Footer from "@/components/Footer";
 import DeferredStyles from "@/components/DeferredStyles";
 import ScrollToTopWrapper from "@/components/ScrollToTopWrapper";
 import WebVitalsTracker from "@/components/WebVitalsTracker";
-import { SITE_NAME, SITE_ORIGIN } from "@/lib/site";
+import { SITE_NAME, SITE_ORIGIN, SITE_TITLE, SITE_META_DESCRIPTION, SEO_KEYWORDS } from "@/lib/site";
 import { IMAGES, APP_ICON_SIZE } from "@/lib/images";
 
 export const viewport: Viewport = {
@@ -31,23 +31,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: "3 Patti Room Game Download APK – Pakistani Earning App 2026",
+    default: SITE_TITLE,
     template: `%s | ${SITE_NAME}`
   },
-  description: "Teen Patti Room is a popular online card game that allows you to enjoy a wide variety of games with its smooth graphics, easy control, and fast gameplay. Download 3 Patti Room APK.",
-  keywords: [
-    "3 Patti Room",
-    "Teen Patti Room",
-    "3 Patti Room download",
-    "3 Patti Room APK",
-    "Teen Patti Room app",
-    "Pakistani earning app",
-    "Teen Patti game Pakistan",
-    "3Patti Room",
-    "online card game Pakistan",
-    "JazzCash gaming",
-    "EasyPaisa gaming",
-  ],
+  description: SITE_META_DESCRIPTION,
+  keywords: [...SEO_KEYWORDS],
   authors: [{ name: `${SITE_NAME} Team` }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
@@ -82,8 +70,8 @@ export const metadata: Metadata = {
     canonical: SITE_ORIGIN,
   },
   openGraph: {
-    title: "3 Patti Room Game Download APK – Pakistani Earning App 2026",
-    description: "Teen Patti Room is a popular online card game with smooth graphics, easy control, and fast gameplay. Download 3 Patti Room APK.",
+    title: SITE_TITLE,
+    description: SITE_META_DESCRIPTION,
     url: SITE_ORIGIN,
     siteName: SITE_NAME,
     locale: "en_US",
@@ -99,8 +87,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "3 Patti Room Game Download APK – Pakistani Earning App 2026",
-    description: "Teen Patti Room is a popular online card game with smooth graphics, easy control, and fast gameplay.",
+    title: SITE_TITLE,
+    description: SITE_META_DESCRIPTION,
     images: [`${SITE_ORIGIN}${IMAGES.app}`],
   },
   applicationName: SITE_NAME,

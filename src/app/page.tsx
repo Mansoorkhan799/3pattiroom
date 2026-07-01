@@ -7,52 +7,41 @@ import BrandText from '@/components/BrandText';
 import AppInfoTable from '@/components/AppInfoTable';
 import ScreenshotGallery from '@/components/ScreenshotGallery';
 import { IMAGES, APP_ICON_SIZE } from '@/lib/images';
-import { SITE_NAME, SITE_ORIGIN, APP_VERSION, APP_SIZE, DOWNLOAD_URL } from '@/lib/site';
+import { SITE_NAME, SITE_ORIGIN, SITE_TITLE, SITE_META_DESCRIPTION, SEO_KEYWORDS, APP_VERSION, APP_SIZE, DOWNLOAD_URL } from '@/lib/site';
 import { ROUTES } from '@/lib/routes';
-import { GUIDE_LINKS, HOMEPAGE_BLOG_LINKS } from '@/lib/internal-links';
-import { breadcrumbSchema, buildSchemaGraph, faqPageSchema, webPageSchema, collectionPageSchema, absoluteUrl } from '@/lib/schema';
+import { DEPOSIT_STEPS, WITHDRAW_STEPS } from '@/lib/guide-steps';
+import { breadcrumbSchema, buildSchemaGraph, faqPageSchema, howToSchema, webPageSchema, absoluteUrl } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: {
-    default: "3 Patti Room Game Download APK – Pakistani Earning App 2026",
+    default: SITE_TITLE,
     template: `%s | ${SITE_NAME}`
   },
-  description: "Teen Patti Room is a popular online card game that allows you to enjoy a wide variety of games with its smooth graphics, easy control, and fast gameplay. Download 3 Patti Room APK for Android.",
-  keywords: [
-    "3 Patti Room",
-    "Teen Patti Room",
-    "3 Patti Room download",
-    "3 Patti Room APK",
-    "Teen Patti Room app",
-    "Pakistani earning app",
-    "Teen Patti game Pakistan",
-    "3Patti Room",
-    "online card game Pakistan",
-    "JazzCash gaming",
-    "EasyPaisa gaming",
-  ],
+  description: SITE_META_DESCRIPTION,
+  keywords: [...SEO_KEYWORDS],
   openGraph: {
-    title: '3 Patti Room Game Download APK – Pakistani Earning App 2026',
-    description: 'Teen Patti Room is a popular online card game with smooth graphics, easy control, and fast gameplay. Download 3 Patti Room APK.',
+    title: SITE_TITLE,
+    description: SITE_META_DESCRIPTION,
     images: [{ url: `${SITE_ORIGIN}${IMAGES.app}`, width: APP_ICON_SIZE.width, height: APP_ICON_SIZE.height, alt: '3 Patti Room - Teen Patti Room Game' }],
     type: 'website'
   },
   twitter: {
     card: 'summary_large_image',
-    title: '3 Patti Room Game Download APK – Pakistani Earning App 2026',
-    description: 'Teen Patti Room is a popular online card game with smooth graphics, easy control, and fast gameplay.',
+    title: SITE_TITLE,
+    description: SITE_META_DESCRIPTION,
     images: [`${SITE_ORIGIN}${IMAGES.app}`]
   }
 };
 
 const tocItems = [
-  { id: 'introduction', label: 'Introduction to 3 Patti Room' },
+  { id: 'what-is-teen-patti-room', label: 'What is Teen Patti Room?' },
   { id: 'unique', label: 'What Makes 3 Patti Room Unique?' },
   { id: 'features', label: 'Key Gaming Features' },
   { id: 'how-to-download', label: 'How to Download' },
   { id: 'system-requirements', label: 'System Requirements' },
   { id: 'register-login', label: 'Create an Account' },
-  { id: 'deposit-withdraw', label: 'Deposit and Withdraw' },
+  { id: 'how-to-add-money', label: 'How to Add Money' },
+  { id: 'how-to-withdraw', label: 'How to Withdraw' },
   { id: 'bonuses', label: 'Bonuses and Promotions' },
   { id: 'popular-pakistan', label: 'Why Popular in Pakistan' },
   { id: 'customer-support', label: 'Customer Support' },
@@ -60,21 +49,32 @@ const tocItems = [
   { id: 'smart-tips', label: 'Smart Tips to Earn Maximum' },
   { id: 'pros-cons', label: 'Pros & Cons' },
   { id: 'conclusion', label: 'Conclusion' },
-  { id: 'help-guides', label: 'Help & Guides' },
   { id: 'faq', label: 'Frequently Asked Questions' },
 ];
 
 const faqs = [
-  { q: 'What is 3 Patti Room?', a: '3Patti Room Game is an online earning and gaming platform where you can join high and low stakes tables to play and earn money. The app is lightweight and runs smoothly even on low-end devices.' },
-  { q: 'Is 3 Patti Room free to use?', a: 'Yes, this gaming app is completely safe to use. The platform uses a strong security system to protect your personal information and transactions.' },
-  { q: 'Which game 3 Patti Room offers?', a: '3 Patti Room offers classical teen Patti games with different modes and variations, like Joker, Muflis mode, and others. You can play beginner-friendly games, like dragon vs tiger, roulette, poker, and mini slot games.' },
-  { q: 'Can I make multiple accounts on 3 Patti Room?', a: 'No, 3 Patti Room allows one account per user. If you try to make multiple accounts, it may lead to suspension or a permanent ban.' },
-  { q: 'Which bonuses are available on 3 Patti Room?', a: '3Patti Room game offers different bonuses and rewards. You can get promotional events and rewards, recharge rebates, and VIP stakes rooms, which offer bigger rewards.' },
-  { q: 'How can I recover my password?', a: 'If you forgot your password, you can easily recover it. On the login page, tap on the forgot password option and follow the on-screen instructions to recover your password.' },
-  { q: 'Is 3 Patti Room free to play?', a: 'You can use practice mode to play games for free, but if you want to play real cash games, you need to add money and place bets.' },
-  { q: 'How can I register for an account on the 3 Patti Room app?', a: 'To register your account on the 3 Patti Room, go to the login page and tap the register or sign up button. Enter your active email or phone number and complete OTP verification to make your account safe.' },
-  { q: 'Can I download 3 Patti Room on iOS?', a: 'Yes, you can easily download 3 Patti Room on iOS devices. Go to the Safari browser and search for the 3 Patti Room official app to download it on your iOS device.' },
-  { q: 'What should I do if my transactions fail?', a: 'Refresh the page or check that your internet connection is stable. You can also contact the customer support team of 3Patti Room with transaction proofs to get help.' },
+  {
+    q: 'What is Teen Patti Room?',
+    a: 'Teen Patti Room is a popular online card game and earning app in Pakistan where players enjoy Teen Patti (3 Patti) with smooth graphics, fast gameplay, and real-money tables. You can download the APK, register an account, add money via JazzCash or EasyPaisa, play games, and withdraw winnings.',
+  },
+  {
+    q: 'What is 3 Patti Room?',
+    a: '3 Patti Room is the same platform as Teen Patti Room — an online Teen Patti gaming app for Android and PC. It offers classic Teen Patti modes, bonuses, local payments, and 24/7 support for Pakistani players.',
+  },
+  {
+    q: 'How to add money in 3 Patti Room?',
+    a: 'Open the app, tap Deposit, choose JazzCash or EasyPaisa, enter the amount, confirm with your transaction PIN, and wait a few seconds. See our full deposit guide at teenpattiroomapp.com.pk/deposit-money-in-3-patti-room for step-by-step instructions.',
+  },
+  {
+    q: 'How to withdraw money from 3 Patti Room?',
+    a: 'Login, open Wallet, tap Withdraw, select JazzCash or EasyPaisa, enter your bound account details and amount, then submit. Money usually arrives within minutes. Read the complete withdrawal guide on our withdraw page for details.',
+  },
+  { q: 'Is 3 Patti Room free to use?', a: 'Yes, downloading and registering is free. Practice mode lets you play without betting. Real cash games require a deposit to your wallet.' },
+  { q: 'Which games does 3 Patti Room offer?', a: '3 Patti Room offers classic Teen Patti with Joker, Muflis, AK47, and tournament modes, plus dragon vs tiger, roulette, poker, and mini slot games.' },
+  { q: 'Can I make multiple accounts on 3 Patti Room?', a: 'No. Only one account per user is allowed. Multiple accounts on the same device or IP can lead to suspension.' },
+  { q: 'How can I recover my password?', a: 'On the login screen, tap Forgot Password and follow the OTP steps sent to your registered email or phone number.' },
+  { q: 'Can I download 3 Patti Room on iOS?', a: 'Not yet. The iOS app is coming soon. Use Android or play on PC with an Android emulator for now.' },
+  { q: 'What should I do if my transactions fail?', a: 'Check your internet, verify JazzCash or EasyPaisa PIN and account details, then retry. Contact in-app support with proof if the issue continues.' },
 ];
 
 export default function Home() {
@@ -84,7 +84,7 @@ export default function Home() {
       "@id": `${SITE_ORIGIN}/#website`,
       "url": `${SITE_ORIGIN}/`,
       "name": SITE_NAME,
-      "description": "Teen Patti Room is a popular online card game with smooth graphics, easy control, and fast gameplay.",
+      "description": SITE_META_DESCRIPTION,
       "inLanguage": "en-US",
       "publisher": { "@id": `${SITE_ORIGIN}/#organization` },
     },
@@ -98,8 +98,8 @@ export default function Home() {
     breadcrumbSchema([{ name: "Home", path: ROUTES.home }]),
     webPageSchema({
       url: SITE_ORIGIN,
-      name: "3 Patti Room Game Download APK – Pakistani Earning App 2026",
-      description: "Teen Patti Room is a popular online card game with smooth graphics, easy control, and fast gameplay.",
+      name: SITE_TITLE,
+      description: SITE_META_DESCRIPTION,
       pageId: `${SITE_ORIGIN}/#webpage`,
     }),
     {
@@ -114,15 +114,18 @@ export default function Home() {
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "500000" },
     },
     faqPageSchema(faqs.map(({ q, a }) => ({ question: q, answer: a }))),
-    collectionPageSchema({
-      url: absoluteUrl(ROUTES.blog),
-      name: `${SITE_NAME} Help Articles`,
-      description: "Troubleshooting and how-to guides for 3 Patti Room players.",
-      items: HOMEPAGE_BLOG_LINKS.map((item) => ({
-        name: item.label,
-        url: absoluteUrl(`${ROUTES.blog}/${item.slug}`),
-      })),
-    })
+    howToSchema({
+      name: "How to Add Money in 3 Patti Room",
+      description: "Step-by-step guide to deposit money in 3 Patti Room using JazzCash and EasyPaisa.",
+      steps: [...DEPOSIT_STEPS],
+      url: absoluteUrl(ROUTES.deposit),
+    }),
+    howToSchema({
+      name: "How to Withdraw Money from 3 Patti Room",
+      description: "Step-by-step guide to withdraw winnings from 3 Patti Room to JazzCash or EasyPaisa.",
+      steps: [...WITHDRAW_STEPS],
+      url: absoluteUrl(ROUTES.withdraw),
+    }),
   );
 
   return (
@@ -195,12 +198,16 @@ export default function Home() {
               </ul>
             </nav>
 
-            {/* Introduction */}
-            <section id="introduction">
-              <h2 className="section-heading">Introduction to <span>3 Patti Room</span></h2>
+            {/* What is Teen Patti Room / 3 Patti Room */}
+            <section id="what-is-teen-patti-room">
+              <h2 className="section-heading">What is <span>Teen Patti Room?</span> What is 3 Patti Room?</h2>
               <div className="space-y-4 text-gray-300 leading-relaxed">
-                <p>3Patti Room is one of the most popular online gaming platforms where you can play multiple games and earn money. You can enjoy real classic teen patti games, different modes, and variations, like Joker mode, AK47, Muflis, and many more to play and earn. The multiple gaming options make the games more fun, and you never get bored while playing.</p>
-                <p>This earning app also includes simple card games, which are easier for beginners to play and earn. With a simple and easy interface, you can enjoy this platform without any difficulty. 3Patti Room also has a 24/7 available customer support team, so if you have any issues, you can connect with them to get the solutions quickly.</p>
+                <p>
+                  <strong className="text-white">Teen Patti Room</strong> is a popular online Teen Patti (3 Patti) card game and earning app in Pakistan. Players download the APK, create an account, add money through JazzCash or EasyPaisa, join real-money tables, and withdraw winnings to their mobile wallet.
+                </p>
+                <p>
+                  <strong className="text-white">3 Patti Room</strong> is the same platform — the official Teen Patti Room game with classic modes (Joker, Muflis, AK47), smooth graphics, fast gameplay, bonuses, and 24/7 customer support. It runs on Android and PC (via emulator) and is built for Pakistani players who want a simple way to play and earn online.
+                </p>
               </div>
             </section>
 
@@ -257,16 +264,56 @@ export default function Home() {
             <section id="how-to-download">
               <h2 className="section-heading">How to Download the Latest Version of the <span>3Patti Room?</span></h2>
               {[
-                { platform: 'For Android', steps: ['Open your browser, and search for the Latest version www.3PattiRoomapp.net.pk.', 'Make sure to visit a trusted site that is safe and secure.', 'Locate the download button and tap on it to start the process.', 'Wait until the file is downloaded and saved to your device.', 'Now, go to your phone settings > security and enable Installation from unknown sources.', 'Open your download manager and look for the 3 Patti Room download APK file.', 'Click on the downloaded file to start the installation and wait until it completes on your device.', 'Once the installation is completed, you can launch the app to start playing and earning money.'] },
-                { platform: 'For iOS', steps: ['First, open the Safari Browser on your iOS device, such as an iPhone or iPad.', 'Make sure your browser is updated for better and smoother performance.', 'Search for the official website of 3 Patti Room.', 'Open the official website and find the download button.', 'Tap on the download button, and wait until the download completes on your device.', 'Once the app is installed, you need to allow permission if asked.', 'Now, go to Settings >General > Device Management and click on trust this developer option.', 'Once the app is installed, launch it on your device to start making money.'] },
-                { platform: 'For PC', steps: ['First, you need to download an Android Emulator to create an Android Setup on your PC.', 'You should install the emulators, like BlueStacks, LD Player, or Nox Player. Make sure to download it from the official website.', 'Open the emulator and sign in with your Google Account.', 'Download the latest version of the 3 Patti Room app from a trusted website.', 'Tap on the Install APK option inside an emulator and allow unknown sources if asked.', 'Once the game is successfully installed, you can start exploring games to earn real cash.'] },
-              ].map(({ platform, steps }) => (
+                {
+                  platform: 'For Android',
+                  steps: [
+                    <>Open your browser, and search for the Latest version <Link href={ROUTES.download} className="text-accent hover:text-accent-light font-medium">www.3PattiRoomapp.net.pk</Link>.</>,
+                    'Make sure to visit a trusted site that is safe and secure.',
+                    <>Go to the <Link href={ROUTES.download} className="text-accent hover:text-accent-light font-medium">3 Patti Room download page</Link>, locate the download button, and tap on it to start the process.</>,
+                    'Wait until the file is downloaded and saved to your device.',
+                    'Now, go to your phone settings > security and enable Installation from unknown sources.',
+                    'Open your download manager and look for the 3 Patti Room download APK file.',
+                    'Click on the downloaded file to start the installation and wait until it completes on your device.',
+                    'Once the installation is completed, you can launch the app to start playing and earning money.',
+                  ],
+                },
+                {
+                  platform: 'For iOS',
+                  comingSoon: true,
+                  message:
+                    '3 Patti Room is not yet launched for iOS devices (iPhone and iPad). The official iOS version is coming soon. Until then, download the app on Android or play on PC using an Android emulator.',
+                },
+                {
+                  platform: 'For PC',
+                  steps: [
+                    'First, you need to download an Android Emulator to create an Android Setup on your PC.',
+                    'You should install the emulators, like BlueStacks, LD Player, or Nox Player. Make sure to download it from the official website.',
+                    'Open the emulator and sign in with your Google Account.',
+                    <>Download the latest version of the 3 Patti Room app from our <Link href={ROUTES.download} className="text-accent hover:text-accent-light font-medium">trusted download page</Link>.</>,
+                    'Tap on the Install APK option inside an emulator and allow unknown sources if asked.',
+                    'Once the game is successfully installed, you can start exploring games to earn real cash.',
+                  ],
+                },
+              ].map(({ platform, steps, comingSoon, message }) => (
                 <div key={platform} className="glass-card p-6 mb-6">
-                  <h3 className="text-xl font-semibold text-accent mb-4">{platform}</h3>
-                  <p className="text-gray-400 mb-3 text-sm">Here is the step-by-step process to download the 3Patti Room application on your {platform.replace('For ', '')} device;</p>
-                  <ol className="space-y-2 text-gray-300 list-decimal list-inside">
-                    {steps.map((step, i) => <li key={i} className="leading-relaxed">{step}</li>)}
-                  </ol>
+                  <h3 className="text-xl font-semibold text-accent mb-4">
+                    {platform}
+                    {comingSoon && (
+                      <span className="ml-2 text-xs font-bold uppercase tracking-wide text-black bg-accent px-2 py-0.5 rounded-full align-middle">
+                        Coming Soon
+                      </span>
+                    )}
+                  </h3>
+                  {comingSoon ? (
+                    <p className="text-gray-300 leading-relaxed text-sm">{message}</p>
+                  ) : (
+                    <>
+                      <p className="text-gray-400 mb-3 text-sm">Here is the step-by-step process to download the 3Patti Room application on your {platform.replace('For ', '')} device;</p>
+                      <ol className="space-y-2 text-gray-300 list-decimal list-inside">
+                        {steps!.map((step, i) => <li key={i} className="leading-relaxed">{step}</li>)}
+                      </ol>
+                    </>
+                  )}
                 </div>
               ))}
               <div className="flex justify-center mt-8">
@@ -289,10 +336,10 @@ export default function Home() {
                   </thead>
                   <tbody>
                     {[
-                      ['Operating System', 'Android 7.0+', 'IOS 11.0+', 'Windows 10 or 11'],
-                      ['RAM', '2GB', '4GB', '4GB'],
-                      ['Storage', '500MB', '500MB', '2GB'],
-                      ['Internet', 'Stable 4G', 'Strong 4G', 'Strong 5G'],
+                      ['Operating System', 'Android 7.0+', 'Coming Soon', 'Windows 10 or 11'],
+                      ['RAM', '2GB', '—', '4GB'],
+                      ['Storage', '500MB', '—', '2GB'],
+                      ['Internet', 'Stable 4G', '—', 'Strong 5G'],
                     ].map(([sys, android, ios, pc]) => (
                       <tr key={sys}>
                         <td className="font-medium text-white">{sys}</td>
@@ -331,28 +378,39 @@ export default function Home() {
               </div>
             </section>
 
-            {/* Deposit & Withdraw */}
-            <section id="deposit-withdraw">
-              <h2 className="section-heading">How to Deposit and Withdraw Earnings on <span>3Patti Room?</span></h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="glass-card p-6">
-                  <h3 className="text-xl font-semibold text-accent mb-4">Deposit Method</h3>
-                  <p className="text-gray-400 mb-4 text-sm">To play real cash games, you need to deposit money into the game wallet. The process is simple and requires a few steps that are listed below;</p>
-                  <ol className="space-y-2 text-gray-300 list-decimal list-inside text-sm">
-                    {['Open the 3 Patti Room app on your device and log in to your account.', 'On the main menu, tap on the deposit button to start the process.', 'Choose a payment method, like Easypaisa or Jazzcash.', 'Enter the amount that you want to add to your game wallet.', 'Recheck all the details and tap on the deposit button.', 'Now, enter your transaction pin to confirm the payment request.', 'Wait a few seconds, and your money will be added to your app wallet.'].map((step, i) => (
-                      <li key={i} className="leading-relaxed">{step}</li>
-                    ))}
-                  </ol>
-                </div>
-                <div className="glass-card p-6">
-                  <h3 className="text-xl font-semibold text-accent mb-4">WIthdrawal Method</h3>
-                  <p className="text-gray-400 mb-4 text-sm">If you want to withdraw your winnings from the 3Patti Room Game wallet, follow the steps below;</p>
-                  <ol className="space-y-2 text-gray-300 list-decimal list-inside text-sm">
-                    {['First, open the official app and log in to your account.', 'Go to the wallet section and tap on withdraw.', 'Select your payment method and enter the required details carefully', 'Enter the amount that you want to withdraw from the game.', 'Double-check all the details to avoid any errors.', 'Click on the submit option and wait for it to complete.', 'After a few minutes, your money will be transferred to your selected account.'].map((step, i) => (
-                      <li key={i} className="leading-relaxed">{step}</li>
-                    ))}
-                  </ol>
-                </div>
+            {/* How to Add Money */}
+            <section id="how-to-add-money">
+              <h2 className="section-heading">How to Add Money in <span>3 Patti Room?</span></h2>
+              <div className="glass-card p-6">
+                <p className="text-gray-400 mb-4 text-sm">
+                  To play real cash games on Teen Patti Room, you need to deposit (add money) to your wallet using JazzCash or EasyPaisa.{" "}
+                  <Link href={ROUTES.deposit} className="text-accent hover:text-accent-light font-medium">
+                    Read the full deposit guide →
+                  </Link>
+                </p>
+                <ol className="space-y-2 text-gray-300 list-decimal list-inside text-sm">
+                  {DEPOSIT_STEPS.map((step, i) => (
+                    <li key={i} className="leading-relaxed">{step}</li>
+                  ))}
+                </ol>
+              </div>
+            </section>
+
+            {/* How to Withdraw */}
+            <section id="how-to-withdraw">
+              <h2 className="section-heading">How to Withdraw Money from <span>3 Patti Room?</span></h2>
+              <div className="glass-card p-6">
+                <p className="text-gray-400 mb-4 text-sm">
+                  Cash out your Teen Patti Room winnings to JazzCash or EasyPaisa using the steps below.{" "}
+                  <Link href={ROUTES.withdraw} className="text-accent hover:text-accent-light font-medium">
+                    Read the full withdrawal guide →
+                  </Link>
+                </p>
+                <ol className="space-y-2 text-gray-300 list-decimal list-inside text-sm">
+                  {WITHDRAW_STEPS.map((step, i) => (
+                    <li key={i} className="leading-relaxed">{step}</li>
+                  ))}
+                </ol>
               </div>
             </section>
 
@@ -461,42 +519,6 @@ export default function Home() {
               </div>
               <div className="flex justify-center mt-8">
                 <DownloadButton />
-              </div>
-            </section>
-
-            {/* Help & Guides */}
-            <section id="help-guides">
-              <h2 className="section-heading">Help & <span>Guides</span></h2>
-              <div className="grid gap-6 md:grid-cols-2">
-                <div className="glass-card p-6">
-                  <h3 className="text-lg font-semibold text-accent mb-4">Official Guides</h3>
-                  <ul className="space-y-2 text-sm">
-                    {GUIDE_LINKS.map(({ href, label }) => (
-                      <li key={href}>
-                        <Link href={href} className="text-gray-300 hover:text-accent transition-colors">
-                          {label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="glass-card p-6">
-                  <h3 className="text-lg font-semibold text-accent mb-4">Popular Help Articles</h3>
-                  <ul className="space-y-2 text-sm">
-                    {HOMEPAGE_BLOG_LINKS.map(({ slug, label }) => (
-                      <li key={slug}>
-                        <Link href={`${ROUTES.blog}/${slug}`} className="text-gray-300 hover:text-accent transition-colors">
-                          {label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-4 text-sm text-gray-400">
-                    <Link href={ROUTES.blog} className="text-accent hover:text-accent-light font-medium">
-                      View all 3 Patti Room blog posts →
-                    </Link>
-                  </p>
-                </div>
               </div>
             </section>
 
