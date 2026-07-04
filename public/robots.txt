@@ -55,4 +55,4 @@ Allow: /
 User-agent: Yandex
 Allow: /
 
-Sitemap: https://teenpattiroomapp.com.pk/sitemap.xml
+Sitemap: https://teenpattiroomapp.com.pk/sitemap-index.xml

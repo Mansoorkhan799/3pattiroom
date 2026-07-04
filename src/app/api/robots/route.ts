@@ -57,7 +57,7 @@ Allow: /
 User-agent: Yandex
 Allow: /
 
-Sitemap: ${SITE_ORIGIN}/sitemap.xml
+Sitemap: ${SITE_ORIGIN}/sitemap-index.xml
 `;
 
   return new NextResponse(robotsTxt, {
