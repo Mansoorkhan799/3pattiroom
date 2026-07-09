@@ -9,12 +9,10 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   
-  // Optimize images (all assets served locally from /public)
+  // Serve /public images at canonical URLs (required for Google Image sitemap indexing)
   images: {
-    formats: ['image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    qualities: [75, 80, 90, 100], // Configure allowed image quality values
+    loader: 'custom',
+    loaderFile: './src/lib/imageLoader.ts',
   },
 
   async redirects() {

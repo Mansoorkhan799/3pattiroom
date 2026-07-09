@@ -156,7 +156,6 @@ export default function Home() {
                   fill
                   className="object-contain p-2"
                   priority
-                  unoptimized
                   sizes="(max-width: 768px) 256px, 320px"
                 />
               </div>
